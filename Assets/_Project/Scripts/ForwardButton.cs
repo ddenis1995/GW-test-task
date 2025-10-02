@@ -1,30 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using HTC.UnityPlugin.ColliderEvent;
-using HTC.UnityPlugin.Utility;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseButton : MonoBehaviour
+public class ForwardButton : MonoBehaviour
     , IColliderEventPressEnterHandler
     , IColliderEventPressExitHandler
 {
-    
+    public static event EventHandler OnForwardEnter;
+    public static event EventHandler OnForwardExit;
     
     public Transform buttonObject;
     public Vector3 buttonDownDisplacement;
-    
-    private ColliderButtonEventData.InputButton m_activeButton = ColliderButtonEventData.InputButton.Trigger;
 
+    [SerializeField]
+    private ColliderButtonEventData.InputButton m_activeButton = ColliderButtonEventData.InputButton.Trigger;
     private HashSet<ColliderButtonEventData> pressingEvents = new HashSet<ColliderButtonEventData>();
 
-    public ColliderButtonEventData.InputButton activeButton { get { return m_activeButton; } set { m_activeButton = value; } }
-    
     public void OnColliderEventPressEnter(ColliderButtonEventData eventData)
     {
         if (eventData.button == m_activeButton && pressingEvents.Add(eventData) && pressingEvents.Count == 1)
         {
+            OnForwardEnter?.Invoke(this, EventArgs.Empty);
             buttonObject.localPosition += buttonDownDisplacement;
-            throw new System.NotImplementedException();
         }
     }
 
@@ -32,8 +30,8 @@ public class BaseButton : MonoBehaviour
     {
         if (pressingEvents.Remove(eventData) && pressingEvents.Count == 0)
         {
+            OnForwardExit?.Invoke(this, EventArgs.Empty);
             buttonObject.localPosition -= buttonDownDisplacement;
-            throw new System.NotImplementedException();
         }
     }
 }

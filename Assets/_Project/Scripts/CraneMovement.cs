@@ -12,6 +12,7 @@ public class CraneMovement : MonoBehaviour
 
     [SerializeField] private float _speed;
     [SerializeField] private Axis _axis;
+    [SerializeField] private Collider _workZoneBoundaries;
 
     private Vector3 _direction;
 
@@ -20,10 +21,6 @@ public class CraneMovement : MonoBehaviour
     private void Awake()
     {
         _craneController = FindObjectOfType<BaseCraneController>();
-        if (_craneController != null)
-        {
-            Debug.Log("Controller located");
-        }
         switch (_axis)
         {
             case Axis.Z:
@@ -50,6 +47,7 @@ public class CraneMovement : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
+
     private void StopMoving()
     {
         _direction = Vector3.zero;
@@ -58,13 +56,13 @@ public class CraneMovement : MonoBehaviour
     private void StartMovingForward()
     {
         _direction = Vector3.forward;
-        Debug.Log("Moving forward");
     }
 
     private void StartMovingBack()
     {
         _direction = Vector3.back;
     }
+
     private void StartMovingRight()
     {
         _direction = Vector3.right;
@@ -86,13 +84,37 @@ public class CraneMovement : MonoBehaviour
     }
 
 
-
     private void Update()
     {
-        transform.Translate(_direction * _speed * Time.deltaTime);
+        if (IsWithinBoundaries())
+        {
+            transform.Translate(_direction * (_speed * Time.deltaTime));
+        }
     }
 
-    
+    private bool IsWithinBoundaries()
+    {
+        var zoneCenter = _workZoneBoundaries.bounds.center;
+        var zoneExtents = _workZoneBoundaries.bounds.extents;
+        var futureposition = transform.position + _direction;
+
+        switch (_axis)
+        {
+            case Axis.X:
+                return futureposition.x < zoneCenter.x + zoneExtents.x &&
+                       futureposition.x > zoneCenter.x - zoneExtents.x;
+            case Axis.Y:
+                return futureposition.y < zoneCenter.y + zoneExtents.y &&
+                       futureposition.y > zoneCenter.y - zoneExtents.y;
+            case Axis.Z:
+                return futureposition.z < zoneCenter.z + zoneExtents.z &&
+                       futureposition.z > zoneCenter.z - zoneExtents.z;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
+
     private void OnDestroy()
     {
         switch (_axis)
@@ -116,13 +138,12 @@ public class CraneMovement : MonoBehaviour
 
             case Axis.Y:
             {
-            
                 _craneController.OnUpEnter.RemoveListener(StartMovingUp);
                 _craneController.OnUpExit.RemoveListener(StopMoving);
                 _craneController.OnDownEnter.RemoveListener(StartMovingDown);
                 _craneController.OnDownExit.RemoveListener(StopMoving);
                 break;
-        }
+            }
             default:
                 throw new ArgumentOutOfRangeException();
         }

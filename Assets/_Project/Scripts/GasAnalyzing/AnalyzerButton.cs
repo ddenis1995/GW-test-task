@@ -1,6 +1,6 @@
-﻿using System;
-using HTC.UnityPlugin.ColliderEvent;
+﻿using HTC.UnityPlugin.ColliderEvent;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class AnalyzerButton : MonoBehaviour
@@ -8,13 +8,16 @@ public class AnalyzerButton : MonoBehaviour
     , IColliderEventPressExitHandler
 
 {
+    [HideInInspector] public UnityEvent OnButtonPress;
+    [HideInInspector] public UnityEvent OnButtonRelease;
+
     public void OnColliderEventPressEnter(ColliderButtonEventData eventData)
     {
-        throw new NotImplementedException();
+        OnButtonPress?.Invoke();
     }
 
     public void OnColliderEventPressExit(ColliderButtonEventData eventData)
     {
-        throw new NotImplementedException();
+        OnButtonRelease?.Invoke();
     }
 }

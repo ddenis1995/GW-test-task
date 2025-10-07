@@ -5,9 +5,20 @@ using UnityEngine;
 public class VRCraneController : BaseCraneController
 {
     [SerializeField] private List<PhysicalButton> _buttons;
+    [SerializeField] private UiManager _uiManager;
+    
+    private enum HandheldStates
+    {
+        None,
+        Controller
+    }
+
+    private HandheldStates _inHand; 
 
     private void Awake()
     {
+        _inHand = HandheldStates.None;
+        _uiManager.UpdateText(0);
         foreach (PhysicalButton button in _buttons)
         {
             button.OnButtonPressed += HandleButtonPressed;
@@ -66,6 +77,23 @@ public class VRCraneController : BaseCraneController
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(direction), direction, null);
+        }
+    }
+
+    public void UpdateControllerState()
+    {
+        switch (_inHand)
+        {
+            case HandheldStates.None:
+                _inHand = HandheldStates.Controller;
+                _uiManager.UpdateText(1);
+                break;
+            case HandheldStates.Controller:
+                _inHand = HandheldStates.None;
+                _uiManager.UpdateText(0);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 }

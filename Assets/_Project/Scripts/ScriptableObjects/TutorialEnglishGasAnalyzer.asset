@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b434961c72d2f89418b6930cce6078e5, type: 3}
+  m_Name: TutorialEnglishGasAnalyzer
+  m_EditorClassIdentifier: 
+  _textsList:
+  - {fileID: 11400000, guid: 4c61128c5f39e00429cd2537f1c0cdf3, type: 2}
+  - {fileID: 11400000, guid: 691a39cf659ca6f48bd148031aaae29c, type: 2}
+  - {fileID: 11400000, guid: 2150ac19fe2114440a0badee7ff4facf, type: 2}
+  - {fileID: 11400000, guid: e01c957e237662745bfeef90733dbe38, type: 2}

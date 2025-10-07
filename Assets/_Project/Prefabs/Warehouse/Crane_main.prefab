@@ -1171,16 +1171,16 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0.33820906, y: 6.4789996, z: 5.151}
-  - {x: 0.33825752, y: 5.764613, z: 5.148401}
-  - {x: 0.33830598, y: 5.107424, z: 5.1458015}
-  - {x: 0.3383544, y: 4.507431, z: 5.1432014}
-  - {x: 0.33840287, y: 3.9646354, z: 5.140602}
-  - {x: 0.3384513, y: 3.4790368, z: 5.1380024}
-  - {x: 0.33849972, y: 3.0506353, z: 5.1354027}
-  - {x: 0.33854818, y: 2.679431, z: 5.132803}
-  - {x: 0.33859664, y: 2.3654237, z: 5.130204}
-  - {x: 0.33864507, y: 2.1086135, z: 5.1276045}
-  - {x: 0.33869353, y: 1.9090004, z: 5.125005}
+  - {x: 0.33830595, y: 5.730258, z: 5.145801}
+  - {x: 0.33840287, y: 5.055905, z: 5.140602}
+  - {x: 0.33849972, y: 4.455937, z: 5.1354027}
+  - {x: 0.33859664, y: 3.9303567, z: 5.130204}
+  - {x: 0.33869353, y: 3.4791632, z: 5.125005}
+  - {x: 0.33879042, y: 3.1023567, z: 5.1198053}
+  - {x: 0.3388873, y: 2.7999372, z: 5.114607}
+  - {x: 0.33898422, y: 2.5719047, z: 5.1094074}
+  - {x: 0.3390811, y: 2.4182591, z: 5.104208}
+  - {x: 0.339178, y: 2.3390007, z: 5.099009}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -1702,10 +1702,10 @@ GameObject:
   - component: {fileID: 8411270200117667715}
   - component: {fileID: 2604326513228685081}
   - component: {fileID: 9085210250602118504}
-  - component: {fileID: 7547395864498353309}
-  - component: {fileID: 6329593087636026181}
-  - component: {fileID: 400366256221333184}
   - component: {fileID: 3670152064646614442}
+  - component: {fileID: 6329593087636026181}
+  - component: {fileID: 7547395864498353309}
+  - component: {fileID: 400366256221333184}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -1723,7 +1723,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 1.7763568e-15, y: 0.009317278, z: -0, w: -0.9999566}
   m_LocalPosition: {x: 0.646763, y: -5.299999, z: -0.1600008}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1924263433742665763}
@@ -1785,68 +1785,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7547395864498353309
-MonoBehaviour:
+--- !u!65 &3670152064646614442
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4352555837033374269}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d95cee40c33260044b37578281bc98a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posOffset: {x: 0, y: 0, z: 0}
-  rotOffset: {x: 0, y: 0, z: 0}
-  alignPosition: 0
-  alignRotation: 0
-  alignPositionOffset: {x: 0, y: 0, z: 0}
-  alignRotationOffset: {x: 0, y: 0, z: 0}
-  m_followingDuration: 0.04
-  m_overrideMaxAngularVelocity: 1
-  m_unblockableGrab: 1
-  m_primaryGrabButton: 0
-  m_secondaryGrabButton: 1
-  m_grabButton: 0
-  m_toggleToRelease: 1
-  m_allowMultipleGrabbers: 0
-  m_grabOnLastEntered: 1
-  m_minStretchScale: 1
-  m_maxStretchScale: 1
-  m_afterGrabbed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_beforeRelease:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_onDrop:
-    m_PersistentCalls:
-      m_Calls: []
+  serializedVersion: 3
+  m_Size: {x: 0.06963147, y: 0.39767498, z: 0.055833865}
+  m_Center: {x: 0.0009254143, y: 0.17598593, z: -0.019116933}
 --- !u!54 &6329593087636026181
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1874,6 +1833,92 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7547395864498353309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4352555837033374269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95cee40c33260044b37578281bc98a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posOffset: {x: 0, y: 0, z: 0}
+  rotOffset: {x: 0, y: 0, z: 0}
+  alignPosition: 0
+  alignRotation: 0
+  alignPositionOffset: {x: 0, y: 0, z: 0}
+  alignRotationOffset: {x: 0, y: 0, z: 0}
+  m_followingDuration: 0.04
+  m_overrideMaxAngularVelocity: 1
+  m_unblockableGrab: 1
+  m_primaryGrabButton: 0
+  m_secondaryGrabButton: 1
+  m_grabButton: 0
+  m_toggleToRelease: 1
+  m_allowMultipleGrabbers: 1
+  m_grabOnLastEntered: 1
+  m_minStretchScale: 1
+  m_maxStretchScale: 1
+  m_afterGrabbed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 400366256221333184}
+        m_TargetAssemblyTypeName: VRCraneController, Assembly-CSharp
+        m_MethodName: UpdateControllerState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_beforeRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 400366256221333184}
+        m_TargetAssemblyTypeName: VRCraneController, Assembly-CSharp
+        m_MethodName: UpdateControllerState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onDrop:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &400366256221333184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1929,27 +1974,7 @@ MonoBehaviour:
   - {fileID: 429463610579223508}
   - {fileID: 3719551497261874996}
   - {fileID: 8653540865666063428}
---- !u!65 &3670152064646614442
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4352555837033374269}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.06963147, y: 0.39767498, z: 0.055833865}
-  m_Center: {x: 0.0009254143, y: 0.17598593, z: -0.019116933}
+  _uiManager: {fileID: 0}
 --- !u!1 &4353961852826159988
 GameObject:
   m_ObjectHideFlags: 0

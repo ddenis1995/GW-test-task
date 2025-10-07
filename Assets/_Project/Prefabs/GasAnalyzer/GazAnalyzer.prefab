@@ -227,7 +227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &727633320705084204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -436,7 +436,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5427155107295269151}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -454,7 +454,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1910942010212781998}
   _logic: {fileID: 6263604503168372738}
-  _animationSpeed: 1
 --- !u!1 &5876668027466185599
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +882,7 @@ RectTransform:
   m_Father: {fileID: 7436007519586725871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -0, y: -0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1018,7 +1017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab681e091781fe74fbc2882f55561aef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.133
+      value: 1.073
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab681e091781fe74fbc2882f55561aef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1075,13 +1074,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ab681e091781fe74fbc2882f55561aef, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6162978751691098741}
+      addedObject: {fileID: 8645292468883950823}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ab681e091781fe74fbc2882f55561aef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6263604503168372738}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ab681e091781fe74fbc2882f55561aef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8236730116283795250}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ab681e091781fe74fbc2882f55561aef, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6263604503168372738}
+      addedObject: {fileID: 2935270969425220277}
   m_SourcePrefab: {fileID: 100100000, guid: ab681e091781fe74fbc2882f55561aef, type: 3}
 --- !u!4 &5840948671506718450 stripped
 Transform:
@@ -1093,7 +1095,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ab681e091781fe74fbc2882f55561aef, type: 3}
   m_PrefabInstance: {fileID: 6234546093163542809}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6162978751691098741
+--- !u!114 &8645292468883950823
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1126,12 +1128,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+        m_TargetAssemblyTypeName: ControllerManagerSample, HTC.ViveInputUtility
+        m_MethodName: OnStickyGrabbed
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1141,12 +1143,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+        m_TargetAssemblyTypeName: ControllerManagerSample, HTC.ViveInputUtility
+        m_MethodName: OnStickyRelease
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1155,6 +1157,22 @@ MonoBehaviour:
   m_onDrop:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6263604503168372738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6504578239292425288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 626311876889f4d498cba62f478d307f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sensor: {fileID: 0}
+  _button: {fileID: 6825659986273467672}
+  _animationTimer: 3
+  _uiManager: {fileID: 0}
 --- !u!65 &8236730116283795250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1176,17 +1194,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.52744365, y: 1.0813847, z: 0.35989597}
   m_Center: {x: 0.0004949257, y: 0.52902645, z: 0.028022908}
---- !u!114 &6263604503168372738
-MonoBehaviour:
+--- !u!54 &2935270969425220277
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6504578239292425288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 626311876889f4d498cba62f478d307f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sensor: {fileID: 0}
-  _button: {fileID: 6825659986273467672}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

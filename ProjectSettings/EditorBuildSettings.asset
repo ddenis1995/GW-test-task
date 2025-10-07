@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Project/Scenes/Warehouse.unity
+    guid: 75cbf88d6876305429534abed8fbfd02
+  - enabled: 1
+    path: Assets/_Project/Scenes/GasAnalyzer.unity
+    guid: 6a256c9306ad7b243828030ec05f6a4a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 4a52c9b665fee61408a2b9b902f5aa24, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 58c114e959c54504eb1c5979b59242b8, type: 2}

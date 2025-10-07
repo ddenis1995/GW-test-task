@@ -3,16 +3,17 @@ using UnityEngine;
 
 public class CraneMovement : MonoBehaviour
 {
+
+    [SerializeField] private float _speed;
+    [SerializeField] private Axis _axis;
+    [SerializeField] private Collider _workZoneBoundaries;
+    
     private enum Axis
     {
         X,
         Y,
         Z
     }
-
-    [SerializeField] private float _speed;
-    [SerializeField] private Axis _axis;
-    [SerializeField] private Collider _workZoneBoundaries;
 
     private Vector3 _direction;
 
@@ -24,13 +25,11 @@ public class CraneMovement : MonoBehaviour
         switch (_axis)
         {
             case Axis.Z:
-            {
                 _craneController.OnForwardEnter.AddListener(StartMovingForward);
                 _craneController.OnForwardExit.AddListener(StopMoving);
                 _craneController.OnBackEnter.AddListener(StartMovingBack);
                 _craneController.OnBackExit.AddListener(StopMoving);
                 break;
-            }
             case Axis.X:
                 _craneController.OnRightEnter.AddListener(StartMovingRight);
                 _craneController.OnRightExit.AddListener(StopMoving);

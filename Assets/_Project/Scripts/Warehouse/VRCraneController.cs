@@ -96,4 +96,9 @@ public class VRCraneController : BaseCraneController
                 throw new ArgumentOutOfRangeException();
         }
     }
+
+    private void RotateSkein()
+    {
+        
+    }
 }
